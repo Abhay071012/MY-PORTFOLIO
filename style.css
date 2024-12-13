@@ -1,0 +1,391 @@
+/* General Reset */
+body,
+ul,
+li,
+a {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #001f3f, #000000);
+  /* Blue to black gradient */
+  color: #ffffff;
+  /* Ensure text is readable on dark background */
+  min-height: 100vh;
+  margin: 0;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #333;
+  color: #fff;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00d8ff;
+
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+/* Image Container */
+.image-container {
+  position: absolute;
+  top: 140px;
+  /* Adjust to place the image below the navbar */
+  left: 20px;
+  /* Margin from the left */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 260px;
+  /* Size to fit the image + border */
+  height: 260px;
+  border-radius: 50%;
+  /* Circular border */
+  background: linear-gradient(135deg, #d7f308, #1f77ff, #e81414);
+  /* Gradient background */
+  padding: 3px;
+  /* Space for the border */
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  /* Makes the image circular */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  /* Shadow effect */
+  object-fit: cover;
+  /* Ensures the image scales properly within the circle */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 20%;
+    background-color: #333;
+    position: absolute;
+    top: 59px;
+    right: 0;
+    margin-right: 1px;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 1rem 0;
+  }
+
+  .image-container {
+    position: relative;
+    margin: 10px auto;
+    top: 10px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    /* Size to fit the image + border */
+    height: 160px;
+    border-radius: 50%;
+    /* Circular border */
+    background: linear-gradient(135deg, #d7f308, #1f77ff, #e81414);
+    /* Gradient background */
+    padding: 2px;
+    /* Space for the border */
+
+  }
+
+  .profile-image {
+    width: 100%;
+    height: 100%;
+    margin-top: 0px;
+    border-radius: 50%;
+  }
+}
+
+.content-section {
+  position: absolute;
+  top: 175px;
+  right: 252px;
+  max-width: 501px;
+  text-align: right;
+  /* Align text to the right */
+  color: #ffffff;
+  /* Text color */
+  padding: 20px;
+  /* Add padding for spacing */
+  border-radius: 15px;
+  /* Rounded corners */
+  /*box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
+}
+
+.content-section h1 {
+  font-size: 2.5rem;
+  /* Large font size for the main headline */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.content-section h2 {
+  font-size: 1.8rem;
+  /* Slightly smaller font for the subheadline */
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.content-section p {
+  font-size: 1rem;
+  /* Standard font size for the paragraph */
+  line-height: 1.6;
+  /* Improve readability */
+  margin: 0;
+}
+.social-icons {
+  display: flex;
+  /* Ensures the icons align horizontally */
+  gap: 1rem;
+  /* Adds consistent spacing between each icon */
+  justify-content: center;
+  margin-top: 25rem;
+}
+
+.social-icons a {
+  display: flex;
+  justify-content: center;
+  /* Centers the icon in the circle */
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: transparent;
+  border: 0.2rem solid #e1e1e1;
+  font-size: 2rem;
+  border-radius: 50%;
+  transition: 0.3s ease;
+  color: #9b3713;
+  text-decoration: none;
+
+  margin-bottom: 200px;
+}
+
+
+.social-icons a:hover {
+  color: black;
+  transform: scale(1.3) translateY(-5px);
+  background-color: #b74b4b;
+  box-shadow: 0 0 25px #b74b4b;
+}
+typing-text{
+  font-size: 34px;
+  font-weight: 600;
+  min-width: 280px;
+  color: #aab74b;
+}
+
+.typing-text span{
+  position: relative;
+}
+
+.typing-text span::before{
+  content: "software Developer";
+  color: #75e9a7;
+  animation: words 20s infinite;
+}
+
+.typing-text span::after{
+  content: "";
+  /*background-color: black;*/
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  border-left: 3px solid black;
+  right: -8;
+  animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor{
+  to{
+      border-left: 3px solid #b74b4b;
+  }
+}
+
+@keyframes words{
+  0%, 20%{
+      content: "Web Developer";
+  }
+  21%, 40%{
+      content: "Intern";
+  }
+  41%, 60%{
+      content: "Web Designer";
+  }
+  61%, 80%{
+      content: "Trainee";
+  }
+  81%, 100%{
+      content: "UI/UX Designer";
+  }
+}
+/* Media Queries for responsiveness */
+@media (max-width: 1024px) {
+  .content-section {
+    right: 15px;
+    /* Reduce right margin for tablets */
+    max-width: 350px;
+    /* Adjust max-width for tablets */
+    top: 160px;
+    /* Adjust top margin for tablets */
+    text-align: left;
+    /* Align text to the left for better readability on smaller screens */
+  }
+
+  .content-section h1 {
+    font-size: 2rem;
+    /* Adjust headline size */
+  }
+
+  .content-section h2 {
+    font-size: 1.5rem;
+    /* Adjust subheadline size */
+  }
+
+  .content-section p {
+    font-size: 0.95rem;
+    /* Adjust paragraph font size */
+  }
+  .social-icons {
+    display: flex;
+    /* Ensures the icons align horizontally */
+    gap: 1rem;
+    /* Adds consistent spacing between each icon */
+    justify-content: center;
+    margin-top: 20rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-section {
+    right: 10px;
+    /* Further reduce right margin for smaller screens */
+    max-width: 300px;
+    /* Reduce the max-width on smaller screens */
+    top: 300px;
+    /* Adjust top margin for mobile */
+    right: 220px;
+    text-align: center;
+    /* Keep text left-aligned for mobile */
+    padding: 15px;
+    /* Reduce padding for smaller screens */
+  }
+
+  .content-section h1 {
+    font-size: 1.8rem;
+    /* Further reduce headline size for mobile */
+  }
+
+  .content-section h2 {
+    font-size: 1.4rem;
+    /* Further reduce subheadline size for mobile */
+  }
+
+  .content-section p {
+    font-size: 0.9rem;
+    /* Reduce paragraph font size for mobile */
+  }
+  .social-icons {
+    display: flex;
+    /* Ensures the icons align horizontally */
+    gap: 1rem;
+    /* Adds consistent spacing between each icon */
+    justify-content: center;
+    margin-top: 20rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-section {
+    right: 5px;
+    /* Reduce right margin even more for very small screens */
+    max-width: 90%;
+    /* Make the content fill more of the screen on very small devices */
+    top: 300px;
+    /* Adjust top margin for small screens */
+    padding: 10px;
+    /* Smaller padding for very small screens */
+  }
+
+  .content-section h1 {
+    font-size: 1.6rem;
+    /* Adjust headline size for small screens */
+  }
+
+  .content-section h2 {
+    font-size: 1.3rem;
+    /* Adjust subheadline size for small screens */
+  }
+
+  .content-section p {
+    font-size: 0.85rem;
+    /* Smaller font size for mobile */
+  }
+  .social-icons {
+    display: flex;
+    /* Ensures the icons align horizontally */
+    gap: 1rem;
+    /* Adds consistent spacing between each icon */
+    justify-content: center;
+    margin-top: 17rem;
+  }
+}
